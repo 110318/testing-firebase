@@ -14,14 +14,16 @@ import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
 import { userValidation } from './userValidation.js'
 
+require('dotenv').config();
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyAQTEoP1VnQi7rIJgOQB5bJxhmOH1UgyiA",
-    authDomain: "fir-prog-web-akilla.firebaseapp.com",
-    projectId: "fir-prog-web-akilla",
-    storageBucket: "fir-prog-web-akilla.appspot.com",
-    messagingSenderId: "416056299259",
-    appId: "1:416056299259:web:1a6c27ea080d6a4ed66a5e"
+    apiKey: process.env.api_Key,
+    authDomain: process.env.auth_Domain,
+    projectId: process.env.project_Id,
+    storageBucket: process.env.storage_Bucket,
+    messagingSenderId: process.env.messaging_SenderID,
+    appId: process.env.app_ID
 };  
 
 // Initialize Firebase, firestore, Storage, Auth
